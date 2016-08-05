@@ -15,10 +15,17 @@ _angular2.default.module("lightcar", ['ui.router']).config(function ($stateProvi
     $stateProvider.state('sign-in', {
         url: '/signin',
         templateUrl: '/user-login/signin.html',
-        controller: function controller($state, $http) {
+        resolve: {
+            usersService: function usersService($http) {
+                return $http.get('/usersDB/checkUserExist');
+            }
+        },
+        controller: function controller($state, $http, usersService) {
+            this.usersDB = usersService.data;
             this.signIn = function (users) {
                 console.log("User email: ", users.email);
                 console.log("User password: ", users.password);
+                console.log("Users: ", this.usersDB);
             };
             this.signUpRedirect = function () {
                 $state.go('register');
