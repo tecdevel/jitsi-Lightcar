@@ -1,0 +1,21 @@
+<div class="container">
+
+    <img src="assets/img/SEGUNDA.png" allign="middle" style=" width:75%;display: block; margin: auto; padding-top: 30px;">
+
+    <form class="form" name="user-signin" ng-submit="usersCtrl.signIn(users)" style="width:75%; display: block; margin: auto;">
+
+        <fieldset class="form-group">
+            <label for="email" >Email:</label>
+            <input type="email" class="form-control"name="email" id="email" ng-model="users.email" required>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="password">Pasword:</label>
+            <input type="password" class="form-control" name="password" id="password" ng-model="users.password" required>
+        </fieldset>
+
+        <input class="btn btn-default" type="submit" value="Sign In">
+        <input class="btn btn-default" type="button" ng-click="usersCtrl.signUpRedirect()" value="Sign Up">
+
+    </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+
+    <img src="assets/img/SEGUNDA.png" allign="middle" style=" width:75%;display: block; margin: auto; padding-top: 30px;">
+
+    <form class="form" name="user-resgiser" ng-submit="usersCtrl.resgisterUser(user)" style="width:75%; display: block; margin: auto;">
+
+        <fieldset class="form-group">
+            <label for="email" >Email:</label>
+            <input type="email" class="form-control"name="email" id="email" ng-model="user.email" required>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="password">Pasword:</label>
+            <input type="password" class="form-control" name="password" id="password" ng-model="user.password" required>
+        </fieldset>
+
+
+        <fieldset class="form-group">
+            <label for="confirm-password">Confirm Pasword:</label>
+            <input type="password" class="form-control" name="confrim-password" id="confirm-password" ng-model="user.confirm" required>
+        </fieldset>
+
+        <input class="btn btn-default" type="submit" value="Register">
+
+    </form>
+</div>
